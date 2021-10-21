@@ -45,7 +45,11 @@ public class PolygonTransform {
     public static void rotate(double[] x, double[] y, double theta) {
         
         double rad = Math.toRadians(theta);
-        for (int i=0; i < x.length; i++){
+        double [] holder = new double [x.length];
+        for(int i=0; i<x.length;i++){
+            holder[i] = x[i];
+        }
+	for (int i=0; i < x.length; i++){
             x[i] = (x[i] * Math.cos(rad)) - (y[i] * Math.sin(rad));
         }
         for (int i=0; i < y.length; i++){
